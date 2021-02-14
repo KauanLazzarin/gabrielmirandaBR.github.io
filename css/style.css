@@ -105,10 +105,6 @@ li, p {
     transition:0.5s;
 }
 
-.hard-skills-list li:nth-child(n -3) {
-    color: green;
-}
-
 .soft-skills-part {
     margin-bottom: 90px;
     clear: both;
