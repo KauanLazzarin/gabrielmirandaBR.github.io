@@ -27,7 +27,14 @@ strong {
     font-weight: 700;
 }
 
-li, p {
+li {
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: default;
+    transition: 0.5s;
+}
+
+p {
     cursor: default;
 }
 
@@ -61,7 +68,6 @@ li, p {
 
 .about-me-part{
     margin-bottom: 90px;
-
 }
 
 .profile-image {
@@ -72,34 +78,30 @@ li, p {
 
 .profile-image:hover {
     opacity: 0.8;
+    transition: 1s;
 }
 
 .text-about-me {
     position: relative;
+    float: right;
     right: 50px;
     max-width: 400px;
-    float: right;
     top: 27px;
 }
 
 .text-about-me h3{
     margin-bottom: 15px;
 }
+
 .text-about-me p {
     text-align: justify;
 }
 
 .hard-skills-part {
     margin-bottom: 90px;
-    clear: both;
 }
 
-.hard-skills-list li {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.hard-skills-list li:hover {
+.hard-skills-part ul li:hover {
     color: grey;
     font-size: 1.2em;
     transition:0.5s;
@@ -110,29 +112,21 @@ li, p {
     clear: both;
 }
 
-.soft-skills-part li {
-    margin-top: 10px;
-    font-weight: bold;
-    transition:0.5s;
+.soft-skills-part li:nth-child(4) {
+    text-decoration: underline;
 }
 
 .soft-skills-part li:hover {
     color: maroon;
     font-size: 1.2em;
 }
-    
-.soft-skills-list #list-item {
-    text-decoration: underline;
-}
 
 .projects-part {
-    clear: both;
     margin-bottom: 90px;
     text-align: center;
 }
 
 #under-construction {
-    position: relative;
     top: 10px;
     left: 15px;
     width: 150px;
@@ -151,7 +145,6 @@ li, p {
 
 .contact-part{
     margin-bottom: 40px;
-    clear: both;
     text-align: center;
 }
 
