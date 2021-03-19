@@ -6,6 +6,18 @@ const paletteColors = document.querySelector('#color-palette');
 const buttonClear = document.getElementById('clear-board');
 const generateButton = document.getElementById('generate-board');
 const tBodyPixelsBoard = document.getElementById('table-body');
+const colorInput = document.querySelector('#color-input');
+
+// inicializa cor custom como vazia
+let customColor = '';
+
+// função que pega o valor em hexadecimal do input color
+function handleColorInput (event) {
+  const colorValue = event.target.value;
+  customColor = colorValue;
+};
+
+colorInput.addEventListener('input', handleColorInput);
 
 function createPaletteColors() {
   const createBoxColor = document.createElement('div');
@@ -23,15 +35,31 @@ function selectedPalette() {
     const element = event;
     document.querySelector('.selected').className = 'color';
     element.target.className = 'color selected';
+    
+    /* 
+      setando cor customizada como vazia quando o usuário escolher uma da paleta
+      isso evita que fique impossível selecionar uma da paleta depois de pegar uma cor
+      personalizada, se pensar em uma maneira melhor de fazer isso favor mudar
+    */
+
+    customColor = '';
   });
 }
 
 function draw() {
   const table = document.querySelector('#pixel-board');
+
+  
   table.addEventListener('click', (event) => {
     const element = event;
     const colorSelected = document.querySelector('.selected').style.backgroundColor;
-    element.target.style.backgroundColor = colorSelected;
+    
+    // verifica se existe uma cor personalizada, se não existir ele pega a selecionada da paleta
+    if (customColor != '') {
+      element.target.style.backgroundColor = customColor;
+    } else { 
+      element.target.style.backgroundColor = colorSelected;
+    }
   });
 }
 
